@@ -1,6 +1,6 @@
-# armago
+# Armago
 
-Arma Golang Extension
+Arma Golang Extension 64 bits
 
 The minimal requirement to build a good & nice GOLANG .dll or .so extension with ARMA3 :)
 
