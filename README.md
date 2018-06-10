@@ -4,6 +4,11 @@ Arma Golang Extension 64 bits
 
 The minimal requirement to build a good & nice GOLANG .dll or .so extension with ARMA3 :)
 
+This template extension complete those jobs:
+- receive ARMA input
+- write it into a file into ARMA directory
+- return a result to ARMA
+
 ## Requirements & Build
 
 1- install the 64bits TDD gcc compiler on your machine
