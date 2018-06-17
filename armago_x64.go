@@ -9,23 +9,19 @@ import "C"
 
 import (
 	"fmt"
-	"os"
 	"unsafe"
 )
 
 //export RVExtension
-func RVExtension(output *C.char, outputsize C.int, input *C.char) {
-	// Create a file and write input from Arma
-	f, _ := os.Create("mylogs.txt")
-	defer f.Close()
-	temp := fmt.Sprintf("%s", C.GoString(input))
-	f.WriteString(temp)
-	f.Sync()
-
+func RVExtension(output *C.char, outputsize C.ulonglong, input *C.char) {
+	temp := fmt.Sprintf("Hello %s!", C.GoString(input))
 	// Return a result to Arma
 	result := C.CString(temp)
 	defer C.free(unsafe.Pointer(result))
 	var size = C.strlen(result) + 1
+	if size > outputsize {
+		size = outputsize
+	}
 	C.memmove(unsafe.Pointer(output), unsafe.Pointer(result), size)
 }
 
