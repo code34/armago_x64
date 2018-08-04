@@ -13,7 +13,7 @@ import (
 )
 
 //export RVExtension
-func RVExtension(output *C.char, outputsize C.ulonglong, input *C.char) {
+func RVExtension(output *C.char, outputsize C.size_t, input *C.char) {
 	temp := fmt.Sprintf("Hello %s!", C.GoString(input))
 	// Return a result to Arma
 	result := C.CString(temp)
