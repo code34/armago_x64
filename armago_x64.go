@@ -15,6 +15,7 @@ import (
 //export RVExtensionVersion
 func RVExtensionVersion(output *C.char, outputsize C.size_t) {
 	result := C.CString("Version 1.0")
+	defer C.free(unsafe.Pointer(result))
 	C.memmove(unsafe.Pointer(output), unsafe.Pointer(result), outputsize - 1)
 }
 
