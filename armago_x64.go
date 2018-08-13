@@ -32,7 +32,11 @@ func RVExtensionArgs(output *C.char, outputsize C.size_t, input *C.char, argv **
 	// Return a result to Arma
 	result := C.CString(temp)
 	defer C.free(unsafe.Pointer(result))
-	C.memmove(unsafe.Pointer(output), unsafe.Pointer(result), outputsize - 1)
+	var size = C.strlen(result) + 1
+	if size > outputsize {
+		size = outputsize
+	}
+	C.memmove(unsafe.Pointer(output), unsafe.Pointer(result), size)
 }
 
 //export RVExtension
@@ -41,7 +45,11 @@ func RVExtension(output *C.char, outputsize C.size_t, input *C.char) {
 	// Return a result to Arma
 	result := C.CString(temp)
 	defer C.free(unsafe.Pointer(result))
-	C.memmove(unsafe.Pointer(output), unsafe.Pointer(result), outputsize - 1)
+	var size = C.strlen(result) + 1
+	if size > outputsize {
+		size = outputsize
+	}
+	C.memmove(unsafe.Pointer(output), unsafe.Pointer(result), size)
 }
 
 func main() {}
