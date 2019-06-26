@@ -5,6 +5,7 @@ package main
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "RVExtension.h"
 */
 import "C"
 
@@ -44,8 +45,8 @@ func RVExtensionArgs(output *C.char, outputsize C.size_t, input *C.char, argv **
 	C.memmove(unsafe.Pointer(output), unsafe.Pointer(result), size)
 }
 
-//export RVExtension
-func RVExtension(output *C.char, outputsize C.size_t, input *C.char) {
+//export goRVExtension
+func goRVExtension(output *C.char, outputsize C.size_t, input *C.char) {
 	temp := fmt.Sprintf("Hello %s!", C.GoString(input))
 	// Return a result to Arma
 	result := C.CString(temp)

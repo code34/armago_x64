@@ -1,0 +1,1 @@
+extern void __stdcall RVExtension(char *output, int outputSize, const char *function);
