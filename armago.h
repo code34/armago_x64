@@ -28,7 +28,7 @@ typedef struct { const char *p; ptrdiff_t n; } _GoString_;
 
 
 
-extern void __stdcall RVExtension(char *output, int outputSize, const char *function);
+__attribute__((dllexport)) void RVExtension(char *output, int outputSize, const char *function);
 
 
 #line 1 "cgo-generated-wrapper"
