@@ -1,1 +1,1 @@
-extern void __stdcall RVExtension(char *output, int outputSize, const char *function);
+__attribute__((dllexport)) void RVExtension(char *output, int outputSize, const char *function);

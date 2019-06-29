@@ -24,7 +24,11 @@ typedef struct { const char *p; ptrdiff_t n; } _GoString_;
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <RVExtension.h>
+
+
+
+
+extern void __stdcall RVExtension(char *output, int outputSize, const char *function);
 
 
 #line 1 "cgo-generated-wrapper"
@@ -77,10 +81,6 @@ typedef struct { void *data; GoInt len; GoInt cap; } GoSlice;
 extern "C" {
 #endif
 
-
-extern void RVExtensionVersion(char* p0, size_t p1);
-
-extern void RVExtensionArgs(char* p0, size_t p1, char* p2, char** p3, int p4);
 
 extern void goRVExtension(char* p0, size_t p1, char* p2);
 
