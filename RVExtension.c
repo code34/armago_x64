@@ -1,9 +1,9 @@
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 
-#include "RVExtension.h"
+extern void goRVExtension(char *output, size_t outputSize, char *input);
 
-__attribute__((dllexport)) void RVExtension(char *output, int outputSize, const char *function) {
-    goRVExtension(output, outputSize, function);
+__declspec(dllexport) void __stdcall _RVExtension(char *output, size_t outputSize, char *input) {
+  goRVExtension(output, outputSize, input);
 }
+
+// do this for all the other exported functions

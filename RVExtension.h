@@ -1,1 +1,0 @@
-__attribute__((dllexport)) void RVExtension(char *output, int outputSize, const char *function);

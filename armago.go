@@ -1,23 +1,14 @@
 package main
 
-
 /*
-#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-#cgo CFLAGS: -I .
-#cgo LDFLAGS: -L . -lRVExtension
-
-__attribute__((dllexport)) void RVExtension(char *output, int outputSize, const char *function);
-
+#include <stdlib.h>
 */
 import "C"
 
-import (
-	"fmt"
-	"unsafe"
-)
+import "unsafe"
+import "fmt"
 
 //export goRVExtension
 func goRVExtension(output *C.char, outputsize C.size_t, input *C.char) {
