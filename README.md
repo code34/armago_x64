@@ -11,7 +11,7 @@ This template extension complete those jobs:
 
 ## Requirements & Build
 
-1- install the TDD gcc compiler on your machine
+1- install the 32/64bits TDD gcc compiler on your machine
 https://sourceforge.net/projects/tdm-gcc/
 
 2- use armago as your entrie point template to develop your own extension :)
