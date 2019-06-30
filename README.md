@@ -19,6 +19,8 @@ https://sourceforge.net/projects/tdm-gcc/
 
 3- build your extension with this command line :
 
+```
 $ENV:GOARCH = 386
 $ENV:CGO_ENABLED = 1
 go build -o armago.dll -buildmode=c-shared .
+```
