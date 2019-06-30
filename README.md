@@ -1,4 +1,4 @@
-# Armago
+#Armago
 
 Arma Golang Extension 32 bits
 
@@ -9,7 +9,7 @@ This template extension complete those jobs:
 - write it into a file into ARMA directory
 - return a result to ARMA
 
-## Requirements & Build
+##Requirements & Build
 
 1- install the 32/64bits TDD gcc compiler on your machine
 https://sourceforge.net/projects/tdm-gcc/
