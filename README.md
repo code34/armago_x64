@@ -1,6 +1,6 @@
 # Armago
 
-Arma Golang Extension 64 bits
+Arma Golang Extension 32/64 bits
 
 The minimal requirement to build a good & nice GOLANG .dll or .so extension with ARMA3 :)
 
@@ -11,10 +11,24 @@ This template extension complete those jobs:
 
 ## Requirements & Build
 
-1- install the 64bits TDD gcc compiler on your machine
+1- install the 32/64bits TDD gcc compiler on your machine
+
 https://sourceforge.net/projects/tdm-gcc/
 
-2- use armago_x64 as your entrie point template to develop your own extension :)
+2- use armago as your entrie point template to develop your own extension :)
 
 3- build your extension with this command line :
-go build -o armago_x64.dll -buildmode=c-shared armago_x64.go
+
+32 bits version
+```
+$ENV:GOARCH = 386
+$ENV:CGO_ENABLED = 1
+go build -o armago.dll -buildmode=c-shared .
+```
+
+64bits version
+```
+$ENV:GOARCH = "amd64"
+$ENV:CGO_ENABLED = 1
+go build -o armago_x64.dll -buildmode=c-shared .
+```
