@@ -17,6 +17,10 @@ import (
 
 var extensionCallbackFnc C.extensionCallback
 
+func runExtensionCallback(name *C.char, function *C.char, data *C.char) C.int {
+	return C.runExtensionCallback(extensionCallbackFnc, name, function, data)
+}
+
 //export goRVExtensionVersion
 func goRVExtensionVersion(output *C.char, outputsize C.size_t) {
 	result := C.CString("Version 1.0")
@@ -58,7 +62,7 @@ func callBackExample() {
 		time.Sleep(2 * time.Second)
 		param := C.CString(fmt.Sprintf("Loop: %d", i))
 		defer C.free(unsafe.Pointer(param))
-		C.runExtensionCallback(extensionCallbackFnc, name, function, param)
+		runExtensionCallback(name, function, param)
 	}
 }
 
