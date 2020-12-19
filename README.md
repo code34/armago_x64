@@ -6,8 +6,8 @@ The minimal requirement to build a good & nice GOLANG .dll or .so extension with
 
 This template extension complete those jobs:
 - receive ARMA input
-- write it into a file into ARMA directory
-- return a result to ARMA
+- by default, return an asynchrone result through "ExtensionCallback" of arma handler
+- or return a synchrone result throught callExtension arma function (if extensionCallbackFnc is unset)
 
 ## Requirements & Build
 
