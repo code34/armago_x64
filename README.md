@@ -13,7 +13,7 @@ This template extension complete those jobs:
 
 1- install the 32/64bits TDD gcc compiler on your machine
 
-https://sourceforge.net/projects/tdm-gcc/
+https://jmeubank.github.io/tdm-gcc/
 
 2- use armago as your entrie point template to develop your own extension :)
 
