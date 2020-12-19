@@ -21,7 +21,7 @@ void RVExtensionArgs(char* output, size_t outputSize, char* input, char** argv, 
 }
 
 void RVExtensionRegisterCallback(extensionCallback fnc) {
-    goRVExtensionRegisterCallback(fnc);
+	goRVExtensionRegisterCallback(fnc);
 }
 #else
 __declspec(dllexport) void __stdcall _RVExtension(char *output, size_t outputSize, char *input) {
@@ -37,7 +37,7 @@ __declspec(dllexport) void __stdcall _RVExtensionArgs(char* output, size_t outpu
 }
 
 __declspec(dllexport) void __stdcall _RVExtensionRegisterCallback(extensionCallback fnc) {
-    goRVExtensionRegisterCallback(fnc);
+	goRVExtensionRegisterCallback(fnc);
 }
 #endif
 // do this for all the other exported functions
