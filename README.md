@@ -19,7 +19,7 @@ https://jmeubank.github.io/tdm-gcc/
 
 3- build your extension with this command line :
 
-32 bits version
+32bits version
 ```
 $ENV:GOARCH = 386
 $ENV:CGO_ENABLED = 1
@@ -31,4 +31,10 @@ go build -o armago.dll -buildmode=c-shared .
 $ENV:GOARCH = "amd64"
 $ENV:CGO_ENABLED = 1
 go build -o armago_x64.dll -buildmode=c-shared .
+```
+
+4- Call your extension from Arma
+```
+addMissionEventHandler ["ExtensionCallback", {systemChat format ["%1", _this];}];
+"armago" callExtension "myfunction";
 ```
