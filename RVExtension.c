@@ -8,19 +8,19 @@ extern void goRVExtensionArgs(char* output, size_t outputSize, char* input, char
 extern void goRVExtensionRegisterCallback(extensionCallback fnc);
 
 #ifdef WIN64
-void RVExtension(char *output, size_t outputSize, char *input) {
+__declspec(dllexport) void RVExtension(char *output, size_t outputSize, char *input) {
 	goRVExtension(output, outputSize, input);
 }
 
-void RVExtensionVersion(char *output, size_t outputSize) {
+__declspec(dllexport) void RVExtensionVersion(char *output, size_t outputSize) {
 	goRVExtensionVersion(output, outputSize);
 }
 
-void RVExtensionArgs(char* output, size_t outputSize, char* input, char** argv, int argc) {
+__declspec(dllexport) void RVExtensionArgs(char* output, size_t outputSize, char* input, char** argv, int argc) {
 	goRVExtensionArgs(output, outputSize, input, argv, argc);
 }
 
-void RVExtensionRegisterCallback(extensionCallback fnc) {
+__declspec(dllexport) void RVExtensionRegisterCallback(extensionCallback fnc) {
 	goRVExtensionRegisterCallback(fnc);
 }
 #else
